@@ -1,10 +1,21 @@
 
+let status
+let online = true 
+let idle = false 
+let dnd = false 
+let offline = false 
+
+function preload() {
+  status = loadImage('status.png')
+}
+
 function setup() {
-  createCanvas(250, 250);
+  createCanvas(680, 250);
+  imageMode(CENTER)
 }
  
 function draw() {
-  background(200);
+  background(0);
   
   translate(-75, -75)
   
@@ -78,16 +89,76 @@ function draw() {
   stroke(0)
   noFill();
   circle(200, 200, 400);
-  
-// Status Symbol 
+
+// Image 
+  image(status, 550, 200, 400, 250)
+
+  if(mouseIsPressed && (mouseX > 275) && (mouseX < 680)) 
+    {
+      if((mouseY > 0) && (mouseY < 55))
+      {
+          online = true 
+          idle = false 
+          dnd = false 
+          offline = false 
+      }
+      if((mouseY > 55) && (mouseY < 105))
+      {
+          online = false  
+          idle = true  
+          dnd = false 
+          offline = false 
+      }
+      if((mouseY > 105) && (mouseY < 165))
+      {
+          online = false  
+          idle = false   
+          dnd = true  
+          offline = false 
+      }
+      if((mouseY > 165) && (mouseY < 250))
+      {
+          online = false  
+          idle = false   
+          dnd = false 
+          offline = true  
+      }
+}
+
+if (online == true) {
+    strokeWeight(12)
+    fill(28, 167, 93)
+    circle(257, 275, 50)
+}
+
+if (idle == true) {
+    strokeWeight(12)
+    fill(241, 178, 65)
+    circle(257, 275, 50)
+    
+    noStroke()
+    fill(0)
+    circle(249, 267, 30)
+
+}
+
+if (dnd == true) {
+    strokeWeight(12)
+    fill(245, 62, 67)
+    circle(257, 275, 50)
+   
+    noStroke()
+    fill(0)
+    rect(245, 270, 25, 8)
+
+}
+
+if (offline == true) {
   strokeWeight(12)
   fill(128, 132, 143)
   circle(257, 275, 50)
-  
+
   noStroke()
   fill(0)
   circle(257, 275, 17)
-  
-  //print(mouseX, mouseY)
 }
-
