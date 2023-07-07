@@ -150,23 +150,24 @@ function draw() {
 
   if((mouseX > 280) && (mouseX < 670)) 
     {
-      if((mouseY > 0) && (mouseY < 55))
+      if((mouseY > 35) && (mouseY < 80))
       {
         image(ponline, 550, 103, 380, 38)
       }
-      if((mouseY > 55) && (mouseY < 105))
+      if((mouseY > 90) && (mouseY < 135))
       {
         image(pidle, 550, 159, 380, 38)
       }
-      if((mouseY > 105) && (mouseY < 165))
+      if((mouseY > 135) && (mouseY < 175))
       {
         image(pdnd, 550, 209, 380, 58)
       }
-      if((mouseY > 165) && (mouseY < 250))
+      if((mouseY > 175) && (mouseY < 270))
       {
         image(poffline, 550, 278, 380, 78)
       }
 }
+
 
 //print(mouseX, mouseY)
 
