@@ -1,24 +1,43 @@
 
 let status
+let ponline
+let pidle
+let pdnd
+let poffline
 let online = true 
 let idle = false 
 let dnd = false 
 let offline = false 
+let a = ''
 
 function preload() {
   status = loadImage('status.png')
+  ponline = loadImage('online.png')
+  pidle = loadImage('idle.png')
+  pdnd = loadImage('dnd.png')
+  poffline = loadImage('offline.png')
 }
 
 function setup() {
-  createCanvas(680, 250);
+  createCanvas(680, 350);
+  background(0);
   imageMode(CENTER)
+    let inp = createInput('');
+  inp.position(290, 297);
+  inp.size(350);
+  inp.input(myInputEvent);
 }
+
+function myInputEvent() {
+ a = (this.value());
+}
+
  
 function draw() {
-  background(0);
   
-  translate(-75, -75)
-  
+  translate(-75, -50)
+
+
 // Blue Background 
   noStroke()
   fill(95, 139, 181);
@@ -68,7 +87,6 @@ function draw() {
   ellipse(240, 215, 50, 15)
   ellipse(200, 225, 20, 30)
   ellipse(190, 230, 22, 20)
-  
 
 // Tree
   fill(73, 53, 19)
@@ -85,10 +103,15 @@ function draw() {
   ellipse(177.5, 129.5, 40, 8)
 
 // Clean up 
-  strokeWeight(200)
+  strokeWeight(50)
   stroke(0)
   noFill();
-  circle(200, 200, 400);
+  circle(200, 200, 250);
+  noStroke()
+  fill(0)
+  rect(75, 300, 100, 40)
+  rect(75, 280, 50, 80)
+  rect(280, 290, 50, 50)
 
 // Image 
   image(status, 550, 200, 400, 250)
@@ -125,36 +148,60 @@ function draw() {
       }
 }
 
+  if((mouseX > 280) && (mouseX < 670)) 
+    {
+      if((mouseY > 0) && (mouseY < 55))
+      {
+        image(ponline, 550, 103, 380, 38)
+      }
+      if((mouseY > 55) && (mouseY < 105))
+      {
+        image(pidle, 550, 159, 380, 38)
+      }
+      if((mouseY > 105) && (mouseY < 165))
+      {
+        image(pdnd, 550, 209, 380, 58)
+      }
+      if((mouseY > 165) && (mouseY < 250))
+      {
+        image(poffline, 550, 278, 380, 78)
+      }
+}
+
+//print(mouseX, mouseY)
+
 if (online == true) {
     strokeWeight(12)
+    stroke(0)
     fill(28, 167, 93)
     circle(257, 275, 50)
 }
 
 if (idle == true) {
     strokeWeight(12)
+    stroke(0)
     fill(241, 178, 65)
     circle(257, 275, 50)
     
     noStroke()
     fill(0)
     circle(249, 267, 30)
-
 }
 
 if (dnd == true) {
     strokeWeight(12)
+    stroke(0)
     fill(245, 62, 67)
     circle(257, 275, 50)
    
     noStroke()
     fill(0)
     rect(245, 270, 25, 8)
-
 }
 
 if (offline == true) {
   strokeWeight(12)
+  stroke(0)
   fill(128, 132, 143)
   circle(257, 275, 50)
 
@@ -162,4 +209,20 @@ if (offline == true) {
   fill(0)
   circle(257, 275, 17)
 }
-          }
+
+
+// Status Message
+
+  fill(100)
+  noStroke()
+  rect(90, 350, 220, 20, 5, 5, 5, 5)
+
+  //print(a)
+
+  fill(255)
+  text('Status: ' + a, 95, 364)
+  text('Set status here:', 370, 344)
+  text('Change status here:', 370, 75)
+
+  quad(329, 0, 329, 500, 330, 500, 330, 0)
+}
