@@ -118,28 +118,28 @@ function draw() {
 
   if(mouseIsPressed && (mouseX > 275) && (mouseX < 680)) 
     {
-      if((mouseY > 0) && (mouseY < 55))
+      if((mouseY > 35) && (mouseY < 80))
       {
           online = true 
           idle = false 
           dnd = false 
           offline = false 
       }
-      if((mouseY > 55) && (mouseY < 105))
+      if((mouseY > 90) && (mouseY < 135))
       {
           online = false  
           idle = true  
           dnd = false 
           offline = false 
       }
-      if((mouseY > 105) && (mouseY < 165))
+      if((mouseY > 135) && (mouseY < 190))
       {
           online = false  
           idle = false   
           dnd = true  
           offline = false 
       }
-      if((mouseY > 165) && (mouseY < 250))
+      if((mouseY > 191) && (mouseY < 270))
       {
           online = false  
           idle = false   
