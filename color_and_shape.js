@@ -222,7 +222,7 @@ if (offline == true) {
 
   fill(255)
   text('Status: ' + a, 95, 364)
-  text('Set status here:', 370, 344)
+  text('Set custom status here:', 370, 344)
   text('Change status here:', 370, 75)
 
   quad(329, 0, 329, 500, 330, 500, 330, 0)
