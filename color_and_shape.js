@@ -158,11 +158,11 @@ function draw() {
       {
         image(pidle, 550, 159, 380, 38)
       }
-      if((mouseY > 135) && (mouseY < 175))
+      if((mouseY > 135) && (mouseY < 190))
       {
         image(pdnd, 550, 209, 380, 58)
       }
-      if((mouseY > 175) && (mouseY < 270))
+      if((mouseY > 191) && (mouseY < 270))
       {
         image(poffline, 550, 278, 380, 78)
       }
