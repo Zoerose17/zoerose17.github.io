@@ -11,7 +11,7 @@ let homePageSetup = false
 
 //Variables for buttons: MEDIA
 let artButton 
-let musicButton  = true
+let musicButton 
 
 //Variables for buttons: STOP AND GO
 // let button
