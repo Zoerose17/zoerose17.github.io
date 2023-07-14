@@ -363,6 +363,12 @@ function homeScreen(){
   		text("Song: HUMBLE.\nArtist: Kendrick Lamar\nProducer: Pluss & Mike WiLL Made-It\nReleased: 2017", 45, 670, 180)
   		text("The line:\n'If I quit your BM, I still ride Mercedes, funk'\nis an omage to Pimp C’s line on “Big Pimpin'”: \nIf I wasn’t rappin', baby, I would still be ridin' Mercedes", 270, 310, 200)
   		text("The chorus in HUMBLE. is a reference to Jeremiah 13:18, in which it says 'Say unto the king and to the queen, Humble yourselves, sit down…'", 270, 475, 350)
+		  		stroke(90, 120, 200)
+			line(480, 291, 480, 440)
+			stroke(128, 120, 200)
+			line(495, 291, 495, 460)
+			line(265, 460, 620, 460)
+
   	}
   	if(vSong3 == true){
   		imageMode(CORNER)
