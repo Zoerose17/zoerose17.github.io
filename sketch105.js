@@ -85,7 +85,7 @@ function windowResized() {
 }
 
 function draw() {
-	print(mouseX, mouseY)
+	//print(mouseX, mouseY)
 	// print(windowHeight)
 	//print(int(song1.currentTime()))
 // Conditionals 
