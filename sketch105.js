@@ -3,11 +3,11 @@ var fadeAmount = 1
 
 
 // Variables for pages 
-let intro = true 
-let eRandom = true 
+let intro = false 
+let eRandom = false 
 let introMessage = false
 let introMessage2 = false
-let homePageSetup = false
+let homePageSetup = true
 
 //Variables for buttons: MEDIA
 let artButton 
@@ -20,6 +20,9 @@ let musicButton  = true
 let img1 // Lightbulb 
 let img2 // Never Let Me Down Cover Art
 let img3 // DAMN. album art
+let img4 // Cali love album art
+let img5
+
 
 let song1
 let song2
@@ -54,12 +57,14 @@ function preload(){
 	img1 = loadImage("light1.jpg");
 	img2 = loadImage("nlmdAC.jpg")
 	img3 = loadImage("damn.jpg")
+	img4 = loadImage("caliLuv.jpg")
+	img5 = loadImage("borah.png")
 
 // Loaded Songs 
   song1 = loadSound("Ye.mp3"); // Song: Never Let You Down 
   song2 = loadSound("humble.mp3"); // Song: Humble 
-  // song3 = loadSound(); // Song:
-  // song4 = loadSound(); // Song:
+  song3 = loadSound("calilove.mp3"); // Song:
+  song4 = loadSound("borahh.mp3"); // Song:
 
 //Loaded Art
   // art1 = loadImage(); // Art:
@@ -82,7 +87,7 @@ function windowResized() {
 function draw() {
 	print(mouseX, mouseY)
 	// print(windowHeight)
-	print(int(song1.currentTime()))
+	//print(int(song1.currentTime()))
 // Conditionals 
 		if(intro == true) {
 			rEllipse()
@@ -348,6 +353,24 @@ function homeScreen(){
   		text("The line:\n'If I quit your BM, I still ride Mercedes, funk'\nis an omage to Pimp C’s line on “Big Pimpin'”: \nIf I wasn’t rappin', baby, I would still be ridin' Mercedes", 270, 310, 200)
   		text("The chorus in HUMBLE. is a reference to Jeremiah 13:18, in which it says 'Say unto the king and to the queen, Humble yourselves, sit down…'", 270, 475, 350)
   	}
+  	if(vSong3 == true){
+  		imageMode(CORNER)
+  		image(img4, 45, 490, 170, 170)
+  		noStroke()
+  		fill(255)
+  		textSize(15)
+  		textWrap(WORD)
+  		text("Song: California Love\nArtist: 2Pac\nFeatures: Roger Troutman and Dr. Dre\nProducer: Dr. Dre\nReleased: 2017", 45, 670, 180)
+  	}
+  	if(vSong4 == true){
+  		imageMode(CORNER)
+  		image(img5, 45, 490, 170, 170)
+  		noStroke()
+  		fill(255)
+  		textSize(15)
+  		textWrap(WORD)
+  		text("Song: Bohemian Rhapsody\nArtist: Queen\nProducer: Queen and Roy Thomas Baker\nReleased: 1975", 45, 670, 180)
+  	}
   }
 }
 
@@ -358,8 +381,10 @@ function toggleArt(){
 	fill(255)
 	textSize(20)
 	noStroke()
-	text("Menu", 100, 425)
-	text("Artwork 1\nArtwork 2\nArtwork 3\nArtwork 4", 60, 480)
+	text("Menu", 100, 300)
+	textSize(15)
+	text("Not Yet Functioning", 55, 400)
+	// text("Artwork 1\nArtwork 2\nArtwork 3\nArtwork 4", 60, 480)
 }
 
 function toggleMusic(){
@@ -387,11 +412,11 @@ function toggleMusic(){
     stroke(100);
     strokeWeight(3);
     line(s2, 215, s2, 270);
-	// //Song 3
-	//   var s3 = map(song3.currentTime(), 0, song3.duration(), 250, windowWidth-200);
-  //   stroke(100);
-  //   strokeWeight(3);
-  //   line(s3, 215, s3, 270);
+	//Song 3
+	  var s3 = map(song3.currentTime(), 0, song3.duration(), 250, windowWidth-200);
+    stroke(100);
+    strokeWeight(3);
+    line(s3, 215, s3, 270);
 	// //Song 4
 	//   var s4 = map(song4.currentTime(), 0, song4.duration(), 250, windowWidth-200);
   //   stroke(100);
@@ -428,15 +453,29 @@ if(musicButton == true){
 		  				if(song2.isPlaying() == true){
 		  					song2.stop()
 		  				}
+		  				if(song3.isPlaying() == true){
+		  					song3.stop()
+		  				}
 		  				song1.play()
 		  			}
 		  			if(vSong2 == true){
 		  				if(song1.isPlaying() == true){
 		  					song1.stop()
 		  				}
+		  				if(song3.isPlaying() == true){
+		  					song3.stop()
+		  				}
 		  				song2.play()
 		  			}
-
+		  			if(vSong3 == true){
+		  				if(song1.isPlaying() == true){
+		  					song1.stop()
+		  				}
+		  				if(song2.isPlaying() == true){
+		  					song2.stop()
+		  				}
+		  				song3.play()
+		  			}
 		} } } 
 
 	// Pause/Play function
@@ -479,6 +518,11 @@ function back(){
 	  var t = song2.currentTime()-5;
 	  song2.jump(t);
 	}
+	if(vSong3 == true){
+	  var len = song3.duration();
+	  var t = song3.currentTime()-5;
+	  song3.jump(t);
+	}
 }
 
 function pp(){
@@ -493,6 +537,11 @@ function pp(){
 	    song2.play();
 	  }  else { song2.pause() }
 }
+	if(vSong3 == true){
+	  if(!song3.isPlaying()){
+	    song3.play();
+	  }  else { song3.pause() }
+}
 }
 
 function fow(){
@@ -502,10 +551,10 @@ function fow(){
 	  song1.jump(t);
 	}
 
-	if(vSong2 == true){
-	  var len = song2.duration();
-	  var t = song2.currentTime()+10;
-	  song2.jump(t);
+	if(vSong3 == true){
+	  var len = song3.duration();
+	  var t = song3.currentTime()+10;
+	  song3.jump(t);
 	}
 }
 
