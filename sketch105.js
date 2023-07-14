@@ -329,7 +329,7 @@ function homeScreen(){
 			line( 270, 620, 675, 620)
 			noStroke()
 			fill(255)
-			text("'When you hot, I'm hot\nAnd when your feet cold, mines is sizzling'\nPossibly referencing Jerry Reed’s 1971 single “When you’re hot, you’re hot”, Hov touches on his longevity in the rap game. He acknowledges other rappers have come up and had their time in the spotlight: Mase, DMX, Ja Rule, among others.", 275, 630, 410)
+			text("'When you hot, I'm hot\nAnd when your feet cold, mines is sizzling'\nThis is referencing Jerry Reed’s 1971 single “When you’re hot, you’re hot”, Hov touches on his longevity in the rap game. He acknowledges other rappers have come up and had their time in the spotlight.", 275, 630, 410)
   		}
   		if(song1.currentTime() > 55){ //first instence of the corus 
 			stroke(128, 120, 200)
