@@ -255,7 +255,7 @@ function homeScreen(){
   }
 
   if(musicButton == true){
-  	
+
 		fill(0)
 		stroke(225)
 		strokeWeight(1)
@@ -428,11 +428,11 @@ function toggleMusic(){
     stroke(100);
     strokeWeight(3);
     line(s3, 215, s3, 270);
-	// //Song 4
-	//   var s4 = map(song4.currentTime(), 0, song4.duration(), 250, windowWidth-200);
-  //   stroke(100);
-  //   strokeWeight(3);
-  //   line(s4, 215, s4, 270);
+	//Song 4
+	  var s4 = map(song4.currentTime(), 0, song4.duration(), 250, windowWidth-200);
+    stroke(100);
+    strokeWeight(3);
+    line(s4, 215, s4, 270);
 
 // Pick a song warning 
 	if(mouseIsPressed){
@@ -467,6 +467,9 @@ if(musicButton == true){
 		  				if(song3.isPlaying() == true){
 		  					song3.stop()
 		  				}
+		  				if(song4.isPlaying() == true){
+		  					song4.stop()
+		  				}
 		  				song1.play()
 		  			}
 		  			if(vSong2 == true){
@@ -475,6 +478,9 @@ if(musicButton == true){
 		  				}
 		  				if(song3.isPlaying() == true){
 		  					song3.stop()
+		  				}
+		  				if(song4.isPlaying() == true){
+		  					song4.stop()
 		  				}
 		  				song2.play()
 		  			}
@@ -485,7 +491,22 @@ if(musicButton == true){
 		  				if(song2.isPlaying() == true){
 		  					song2.stop()
 		  				}
+		  				if(song4.isPlaying() == true){
+		  					song4.stop()
+		  				}
 		  				song3.play()
+		  			}
+		  			if(vSong4 == true){
+		  				if(song1.isPlaying() == true){
+		  					song1.stop()
+		  				}
+		  				if(song2.isPlaying() == true){
+		  					song2.stop()
+		  				}
+		  				if(song3.isPlaying() == true){
+		  					song3.stop()
+		  				}
+		  				song4.play()
 		  			}
 		} } } 
 
@@ -534,6 +555,11 @@ function back(){
 	  var t = song3.currentTime()-5;
 	  song3.jump(t);
 	}
+	if(vSong4 == true){
+	  var len = song4.duration();
+	  var t = song4.currentTime()-5;
+	  song4.jump(t);
+	}
 }
 
 function pp(){
@@ -553,6 +579,11 @@ function pp(){
 	    song3.play();
 	  }  else { song3.pause() }
 }
+	if(vSong4 == true){
+	  if(!song4.isPlaying()){
+	    song4.play();
+	  }  else { song4.pause() }
+}
 }
 
 function fow(){
@@ -562,10 +593,21 @@ function fow(){
 	  song1.jump(t);
 	}
 
+	if(vSong2 == true){
+	  var len = song2.duration();
+	  var t = song2.currentTime()+10;
+	  song2.jump(t);
+	}
+
 	if(vSong3 == true){
 	  var len = song3.duration();
 	  var t = song3.currentTime()+10;
 	  song3.jump(t);
+	}
+	if(vSong4 == true){
+	  var len = song4.duration();
+	  var t = song4.currentTime()+10;
+	  song4.jump(t);
 	}
 }
 
