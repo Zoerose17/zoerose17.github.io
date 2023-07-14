@@ -85,7 +85,7 @@ function windowResized() {
 }
 
 function draw() {
-	//print(mouseX, mouseY)
+	print(mouseX, mouseY)
 	// print(windowHeight)
 	//print(int(song1.currentTime()))
 // Conditionals 
@@ -222,6 +222,11 @@ function homeScreen(){
 
 // Setup for geometry
 
+
+// Conditionals for menu 
+
+  if(artButton == true){
+
 		fill(0)
 		stroke(225)
 		strokeWeight(1)
@@ -231,10 +236,6 @@ function homeScreen(){
 		rect(250, 290, windowWidth-290, 490)
 		strokeWeight(3)
 		rect(250, 220, windowWidth-290, 45)
-
-// Conditionals for menu 
-
-  if(artButton == true){
   	if(mouseIsPressed){
   		if(mouseX > 60 && mouseX < 155){
   			if(mouseY > 465 && mouseY < 485){
@@ -254,6 +255,16 @@ function homeScreen(){
   }
 
   if(musicButton == true){
+  	
+		fill(0)
+		stroke(225)
+		strokeWeight(1)
+		rect(45, 220, 170, 30)
+		rect(45, 275, 170, 30)
+		rect(45, 330, 170, 150)
+		rect(250, 290, windowWidth-290, 490)
+		strokeWeight(3)
+		rect(250, 220, windowWidth-290, 45)
 
   	if(mouseIsPressed){
   		if(mouseX > 60 && mouseX < 155){
