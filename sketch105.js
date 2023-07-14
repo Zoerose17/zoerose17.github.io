@@ -3,11 +3,11 @@ var fadeAmount = 1
 
 
 // Variables for pages 
-let intro = false 
-let eRandom = false 
+let intro = true 
+let eRandom = true 
 let introMessage = false
 let introMessage2 = false
-let homePageSetup = true
+let homePageSetup = false
 
 //Variables for buttons: MEDIA
 let artButton 
